@@ -188,3 +188,55 @@ fruits.map((element, index) => {
     tablongueur[index] = element.length;
 });
 console.log(tablongueur);
+let tabpluscinqlettres = [];
+const result = fruits.filter((value) => value.length > 5);
+console.log(result);
+const resultreduce = fruits.reduce((acc, val) => {
+    return acc + val;
+});
+console.log(resultreduce);
+const resultforeach = fruits.forEach((elt) => {
+    console.log(elt);
+});
+const resultfind = fruits.find((element) => element.includes('a'));
+console.log(resultfind);
+const resultsome = fruits.some((fruit) => fruit.includes('z'));
+console.log(resultsome);
+const resultevery = fruits.every((fruit) => fruit.includes('e'));
+console.log(resultevery);
+const resultsort = fruits.sort();
+console.log(resultsort);
+console.log(fruits);
+const prix = [104, 23.3, 30.1, 240.9, 55];
+const resultmap = prix.map((element) => {
+    return element * 1.20;
+});
+console.log(resultmap);
+const resultsuptrente = prix.find((element) => element > 30);
+console.log(resultsuptrente);
+function deuxiemeChiffre(num) {
+    //if(num.toString().includes('.')) {
+    //}
+    const deuxiemelettre = num.toString().charAt(1);
+    const deuxiemenumber = deuxiemelettre;
+    return deuxiemenumber;
+}
+console.log(deuxiemeChiffre(28635.135));
+const resultdeuxiemeplusgrand = prix.sort((a, b) => deuxiemeChiffre(b) - deuxiemeChiffre(a));
+console.log(resultdeuxiemeplusgrand);
+function apresvirgule(num) {
+    let resnumber = 0;
+    if (num.toString().includes('.')) {
+        const index = num.toString().indexOf('.');
+        console.log(index);
+        let res = "";
+        for (let i = index + 1; i < num.toString().length; i++) {
+            res = res + num.toString().charAt(i);
+        }
+        resnumber = res;
+    }
+    return resnumber;
+}
+console.log(apresvirgule(109.387));
+const prixpluscentimestrie = prix.sort((a, b) => apresvirgule(b) - apresvirgule(a));
+console.log(prixpluscentimestrie);
